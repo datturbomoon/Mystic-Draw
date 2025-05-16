@@ -4,6 +4,7 @@ A tarot card picker built with HTML, CSS, and JavaScript. Draw as many cards as 
 
 View live site [here](https://dianapadre.github.io/mystic-draw/).
 
-![Screenshot 1](Screenshot1.png)
-![Screenshot 2](Screenshot2.png)
-![Screenshot 3](Screenshot3.png)
+![Webview](Screenshot1.png)
+![Webview card drawn](Screenshot2.png)
+![Mobile view](Screenshot3.png)
+![Mobile view card drawn](Screenshot4.png)
