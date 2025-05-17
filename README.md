@@ -4,7 +4,7 @@ A tarot card picker built with HTML, CSS, and JavaScript. Draw as many cards as 
 
 ## Check out my project
 
-<a href="https://dianapadre.github.io/mystic-draw/" target="_blank" rel="noopener noreferrer">Visit the live demo.</a>
+[Visit the live demo.](https://dianapadre.github.io/mystic-draw/)
 
 ![Webview](Snapshots/Screenshot1.png)
 ![Webview card drawn](Snapshots/Screenshot2.png)
