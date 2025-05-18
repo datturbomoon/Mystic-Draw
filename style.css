@@ -252,10 +252,11 @@ body {
 } */
 
 .card-front.reversed .card-number {
-  top: 6px;
+  /* top: 6px;
   bottom: auto;
   left: 6px;
-  transform: rotate(-180deg);
+  transform: rotate(-180deg); */
+  transform: rotateY(180deg) rotate(180deg);
 }
 
 .card-inner.blur {
