@@ -226,6 +226,7 @@ body {
     opacity: 1;
   }
 }
+
 .card-number {
   position: absolute;
   bottom: 6px;
@@ -241,8 +242,7 @@ body {
   line-height: 1.2;
   pointer-events: none;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
-  
-  /* By default: no counter rotation */
+  z-index: 2;
   transform: rotate(0deg);
 }
 
