@@ -249,7 +249,7 @@ body {
 /* If card is reversed, counter the 180deg parent rotation */
 
 .card-front.reversed .card-number {
-  transform: rotateY(180deg) rotate(180deg); /* flipped + reversed */
+  transform: rotate(-180deg);
 }
 
 /*
