@@ -252,7 +252,7 @@ body {
   top: 6px;
   right: 6px;
   bottom: auto;
-  transform: rotate(-180deg);
+  transform: rotate(180deg);
 }
 
 /*
