@@ -249,14 +249,20 @@ body {
 /* If card is reversed, counter the 180deg parent rotation
 .card-front.reversed .card-number {
   transform: rotate(-180deg);
+}
+
+.card-front.reversed .card-number {
+  top: 6px;
+  bottom: auto;
+  left: 6px;
+  transform: rotate(-180deg);
+  transform: rotateY(180deg) rotate(180deg);
 } */
 
 .card-front.reversed .card-number {
-  /* top: 6px;
+  transform: rotate(-180deg) translateY(-100%);
+  top: 6px;
   bottom: auto;
-  left: 6px;
-  transform: rotate(-180deg); */
-  transform: rotateY(180deg) rotate(180deg);
 }
 
 .card-inner.blur {
