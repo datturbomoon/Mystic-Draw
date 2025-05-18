@@ -246,8 +246,15 @@ body {
   transform: rotate(0deg);
 }
 
-/* If card is reversed, counter the 180deg parent rotation */
+/* If card is reversed, counter the 180deg parent rotation
 .card-front.reversed .card-number {
+  transform: rotate(-180deg);
+} */
+
+.card-front.reversed .card-number {
+  top: 6px;
+  bottom: auto;
+  left: 6px;
   transform: rotate(-180deg);
 }
 
