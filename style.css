@@ -260,7 +260,7 @@ body {
 } */
 
 .card-front.reversed .card-number {
-  transform: rotate(-180deg) translateY(-100%);
+  transform: rotate(180deg) translateY(100%);
   top: 6px;
   bottom: auto;
 }
