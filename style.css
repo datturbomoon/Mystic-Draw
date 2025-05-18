@@ -249,6 +249,9 @@ body {
 /* If card is reversed, counter the 180deg parent rotation */
 
 .card-front.reversed .card-number {
+  top: 6px;
+  left: 6px;
+  bottom: auto;
   transform: rotate(-180deg);
 }
 
