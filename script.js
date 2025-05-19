@@ -59,7 +59,7 @@ function renderDeck() {
       // ? Play card flip sound IMMEDIATELY on any click
       const flipAudio = document.getElementById("card-flip-audio");
       if (flipAudio && soundEnabled) {
-        flipAudio.volume = 0.5;
+        flipAudio.volume = 0.8;
         flipAudio.currentTime = 0;
         flipAudio.play();
       }
