@@ -14,9 +14,10 @@
 <body>
   <div id="particles-js"></div>
 
+  <!-- ? Wrapper for the main content of the page -->
   <div class="container">
-    <h1>Mystic Draw</h1>
-    <p>(Draw as many cards as you like. Card Selection will reset once shuffled.)</p>
+    <h1 class="title">Mystic Draw</h1>
+    <p class="instructions">(Draw as many cards as you like. Card Selection will reset once shuffled.)</p>
     <div class="button-group">
       <button id="shuffleBtn">Shuffle Deck</button>
       <button id="drawRandomBtn">Draw a Random Card</button>
@@ -28,8 +29,14 @@
         <span class="close-button">&times;</span>
         <img id="modal-image" src="" alt="Tarot Card" />
       </div>
+    </div>
+  </div>
+  <!-- ? Footer -->
+  <footer>
+    <p>&copy; 2025 <a href="https://github.com/dianapadre" target="_blank">dianapadre</a> | All rights reserved.</p>
+  </footer>
 
-      <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
