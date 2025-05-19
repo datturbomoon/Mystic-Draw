@@ -11,6 +11,7 @@ body {
   scroll-behavior: smooth;
   font-size: 16px;
   /* Default font size */
+  overflow-x: hidden;
 }
 
 /* ! padding left & right removed at 768px width below */
@@ -32,41 +33,33 @@ body {
   width: 100%;
   height: 100%;
   z-index: 0;
-  /* Behind your content */
   background-color: #1e1e2f;
-  /* Or your preferred background color */
-  /* border: 10px solid #fffb00; */
 }
 
 .container {
-  /* flex: 1 0 auto; */
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
   width: 100%;
   text-align: center;
   position: relative;
   z-index: 1;
-  /* border: 1px solid #ff0000; */
 }
 
 .container .title {
-  /* border: 1px solid #fffb00; */
+  margin-top: 1rem;
 }
 
 .container .instructions {
-  /* border: 1px solid #fffb00; */
+  padding: 0 1rem;
 }
 
 /* ? THE BUTTONS */
 .button-group {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  /* margin: 1rem 0; */
+  gap: 1.5rem;
   flex-wrap: wrap;
-  /* allows stacking on small screens */
-  /* border: 1px solid #fffb00; */
 }
 
 .button-group button {
@@ -103,10 +96,8 @@ body {
 .deck {
   display: flex;
   flex-wrap: wrap;
-  /* gap: 0.5rem; */
   padding: 1rem;
   justify-content: center;
-  /* border: 1px solid #fffb00; */
 }
 
 .card::before {
@@ -216,8 +207,6 @@ body {
 
 }
 
-/* ? 768px MAX-WIDTH STYLE END */
-
 .modal {
   position: fixed;
   top: 0;
@@ -229,6 +218,7 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 999;
+  transition: all 0.3s ease;
 }
 
 .modal.hidden {
@@ -237,40 +227,31 @@ body {
 
 .modal-content {
   position: relative;
-  background-color: #7a4c7f;
+  background-color: rgba(122, 76, 127, 0.8); /* Slightly see-through purple */
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
   max-width: 90vw;
   max-height: 90vh;
-}
-
-.modal-content img {
-  max-width: 100%;
-  max-height: 80vh;
-  border-radius: 8px;
-}
-
-.close-button {
-  position: absolute;
-  top: 0px;
-  right: 5px;
-  font-size: 28px;
-  color: white;
-  cursor: pointer;
-  z-index: 999;
-}
-
-.close-button:hover {
-  color: #d0d0d0;
-  transition: color 0.3s ease;
-}
-
-.modal-content img.animate {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
   animation: flipZoomIn 0.6s ease forwards;
   transform-style: preserve-3d;
 }
 
+.modal-content img {
+  max-width: 220px;
+  max-height: 80vh;
+  border-radius: 8px;
+  display: block;
+  /* Remove animation from image, keep for backward compatibility */
+  animation: none;
+}
+
+/* ? CARD FLIP ANIMATION */
 @keyframes flipZoomIn {
   0% {
     transform: rotateY(90deg) scale(0.5);
@@ -283,6 +264,89 @@ body {
   }
 }
 
+.card-meaning {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  color: #fff;
+  max-width: 350px;
+  min-width: 200px;
+  text-align: left;
+  gap: 1rem;
+}
+
+.card-advice {
+  margin-top: 0.5rem;
+  font-size: 1.05rem;
+  color: #ffe066;
+  font-style: italic;
+  text-align: left;
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-meaning {
+    max-width: 100%;
+    min-width: 0;
+    align-items: center;
+    text-align: center;
+  }
+  .card-advice {
+    text-align: center;
+  }
+}
+
+#card-name {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.meaning-upright, .meaning-reversed {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.meaning-upright::before {
+  content: "Upright: ";
+  font-weight: bold;
+  color: #ffe066;
+}
+
+.meaning-reversed::before {
+  content: "Reversed: ";
+  font-weight: bold;
+  color: #ffe066;
+}
+
+/* ? MODAL CLOSE BUTTON */
+.close-button {
+  position: absolute;
+  top: 3px;
+  right: 8px;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.close-button:hover {
+  color: #d0d0d0;
+  transition: color 0.3s ease;
+}
+
+.close-button:active {
+  color: #b0b0b0;
+  transition: color 0.1s ease;
+}
+
+/* ? CARD NUMBER */
 .card-number {
   position: absolute;
   bottom: 6px;
@@ -306,11 +370,8 @@ body {
   transform: rotate(-180deg);
   left: auto;
   right: 6px;
-}
-
-.card-inner.blur {
-  filter: blur(8px);
-  transition: filter 0.3s ease;
+  top: 6px;
+  bottom: auto;
 }
 
 /* ? CARD SHUFFLING ANIMATION */
@@ -318,38 +379,38 @@ body {
   0% {
     transform: translate(0, 0) rotate(0deg) scale(1);
     opacity: 1;
+    filter: blur(0px);
     z-index: 1;
   }
-
-  50% {
-    opacity: 0.5;
+  60% {
+    opacity: 0.7;
+    filter: blur(6px);
+    z-index: 0;
   }
-
   100% {
     transform: translate(var(--tx), var(--ty)) rotate(var(--r)) scale(0.7);
-    opacity: 0;
+    opacity: 0.3;
+    filter: blur(12px);
     z-index: 0;
   }
 }
 
 @keyframes regroup {
   0% {
-    transform: translate(var(--tx), var(--ty)) rotate(var(--r)) scale(0.7);
-    opacity: 0;
+    transform: translate(var(--ty), var(--tx)) rotate(var(--r)) scale(0.7);
+    opacity: 0.3;
+    filter: blur(12px);
   }
-
-  50% {
-    opacity: 0.5;
-    /* fully visible most of the way */
+  60% {
+    opacity: 0.7;
+    filter: blur(6px);
   }
-
   100% {
     transform: translate(0, 0) rotate(0deg) scale(1);
-    opacity: 0;
-    /* lower opacity at the end */
+    opacity: 1;
+    filter: blur(0px);
   }
 }
-
 
 .scatter-animation {
   animation: scatter 0.8s forwards;
@@ -359,42 +420,13 @@ body {
   animation: regroup 0.8s forwards;
 }
 
-/* ? GLOW EFFECT */
-.card-inner.glow::after {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.4);
-  animation: pulse-glow 1s infinite ease-in-out;
-  pointer-events: none;
-  z-index: 1;
-}
-
-@keyframes pulse-glow {
-  0% {
-    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.3);
-  }
-
-  50% {
-    box-shadow: 0 0 20px 8px rgba(255, 255, 255, 0.6);
-  }
-
-  100% {
-    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.3);
-  }
-}
-
-/* END OF GLOW EFFECT */
-
+/* ? FOOTER */
 footer {
   position: static;
   width: 100%;
   background: none;
   color: #d0d0d0;
+  font-size: smaller;
   text-align: center;
   margin-top: 1.5rem;
   z-index: 1;
@@ -422,4 +454,34 @@ footer a:hover {
 footer a:active {
   color: #7a4c7f;
   transition: text-decoration 0.1s ease;
+}
+
+.instructions {
+  font-style: italic;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.sound-toggle-icon {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  z-index: 10;
+  /* background: rgba(255,255,255,0.7); */
+  border-radius: 50%;
+  padding: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s;
+}
+
+.sound-toggle-icon:hover {
+  filter: brightness(1);
+}
+
+.sound-toggle-icon img {
+  display: block;
+  width: 26px;
+  height: 26px;
+  filter: brightness(0.8);
+  cursor: pointer;
 }

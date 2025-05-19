@@ -17,10 +17,15 @@
   <!-- ? Wrapper for the main content of the page -->
   <div class="container">
     <h1 class="title">Mystic Draw</h1>
-    <p class="instructions">(Draw as many cards as you like. Card Selection will reset once shuffled.)</p>
+    <p class="instructions">(You can draw multiple cards. Shuffling will clear your current selection.)</p>
     <div class="button-group">
       <button id="shuffleBtn">Shuffle Deck</button>
       <button id="drawRandomBtn">Draw a Random Card</button>
+    </div>
+
+    <!-- ? Sound toggle icon in upper right corner -->
+    <div id="sound-toggle-icon" class="sound-toggle-icon" title="Toggle sound effects">
+      <img id="sound-icon-img" src="img/sound-on.png" alt="Sound On" >
     </div>
 
     <div class="deck" id="deck"></div>
@@ -28,14 +33,22 @@
       <div class="modal-content">
         <span class="close-button">&times;</span>
         <img id="modal-image" src="" alt="Tarot Card" />
+        <div id="card-meaning" class="card-meaning">
+          <h2 id="card-name"></h2>
+          <div id="meaning-upright" class="meaning-upright"></div>
+          <div id="meaning-reversed" class="meaning-reversed"></div>
+          <div id="card-advice" class="card-advice"></div>
+        </div>
       </div>
     </div>
   </div>
   <!-- ? Footer -->
   <footer>
-    <p>&copy; 2025 <a href="https://github.com/dianapadre" target="_blank">dianapadre</a> | All rights reserved.</p>
+    <p>&copy; 2025 <a href="https://github.com/datturbomoon" target="_blank">datturbomoon</a> | All rights reserved.</p>
   </footer>
-
+  <audio id="shuffle-audio" src="shuffle.mp3" preload="auto"></audio>
+  <audio id="card-flip-audio" src="card-flip.mp3" preload="auto"></audio>
+  <audio id="click-audio" src="click.mp3" preload="auto"></audio>
   <script src="script.js"></script>
 </body>
 
