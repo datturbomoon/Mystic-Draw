@@ -434,12 +434,12 @@ modal.addEventListener("click", (e) => {
     closeModal();
   } else if (e.target === closeBtn) {
     // Play click sound for close button
-    const clickAudio = document.getElementById("click-audio");
+    /* const clickAudio = document.getElementById("click-audio");
     if (clickAudio && soundEnabled) {
       clickAudio.volume = 0.5;
       clickAudio.currentTime = 0;
       clickAudio.play();
-    }
+    } */
     closeModal();
   }
 });
