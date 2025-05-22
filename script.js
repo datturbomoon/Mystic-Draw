@@ -134,7 +134,7 @@ shuffleBtn.addEventListener("click", () => {
     // Set animation transform values
     const tx = (Math.random() - 0.5) * 120 + "px";
     const ty = (Math.random() - 0.5) * 80 + "px";
-    const r = (Math.random() - 0.5) * 444 + "deg";
+    const r = (Math.random() - 0.5) * 60 + "deg";
 
     cardInner.style.setProperty("--tx", tx);
     cardInner.style.setProperty("--ty", ty);
