@@ -206,6 +206,51 @@ body {
   }
 
 }
+/* ? CARD SHUFFLING ANIMATION */
+@keyframes scatter {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+    filter: blur(0px);
+    z-index: 1;
+  }
+  60% {
+    opacity: 0.7;
+    filter: blur(6px);
+    z-index: 0;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty)) rotate(var(--r)) scale(0.7);
+    opacity: 0.3;
+    filter: blur(12px);
+    z-index: 0;
+  }
+}
+
+@keyframes regroup {
+  0% {
+    transform: translate(var(--ty), var(--tx)) rotate(var(--r)) scale(0.7);
+    opacity: 0.3;
+    filter: blur(12px);
+  }
+  60% {
+    opacity: 0.7;
+    filter: blur(6px);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+.scatter-animation {
+  animation: scatter 0.8s forwards;
+}
+
+.regroup-animation {
+  animation: regroup 0.8s forwards;
+}
 
 .modal {
   position: fixed;
@@ -372,52 +417,6 @@ body {
   right: 6px;
   top: 6px;
   bottom: auto;
-}
-
-/* ? CARD SHUFFLING ANIMATION */
-@keyframes scatter {
-  0% {
-    transform: translate(0, 0) rotate(0deg) scale(1);
-    opacity: 1;
-    filter: blur(0px);
-    z-index: 1;
-  }
-  60% {
-    opacity: 0.7;
-    filter: blur(6px);
-    z-index: 0;
-  }
-  100% {
-    transform: translate(var(--tx), var(--ty)) rotate(var(--r)) scale(0.7);
-    opacity: 0.3;
-    filter: blur(12px);
-    z-index: 0;
-  }
-}
-
-@keyframes regroup {
-  0% {
-    transform: translate(var(--ty), var(--tx)) rotate(var(--r)) scale(0.7);
-    opacity: 0.3;
-    filter: blur(12px);
-  }
-  60% {
-    opacity: 0.7;
-    filter: blur(6px);
-  }
-  100% {
-    transform: translate(0, 0) rotate(0deg) scale(1);
-    opacity: 1;
-    filter: blur(0px);
-  }
-}
-
-.scatter-animation {
-  animation: scatter 0.8s forwards;
-}
-
-.regroup-animation {
-  animation: regroup 0.8s forwards;
 }
 
 /* ? FOOTER */

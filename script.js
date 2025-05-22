@@ -132,8 +132,8 @@ shuffleBtn.addEventListener("click", () => {
     const cardInner = card.querySelector(".card-inner");
 
     // Set animation transform values
-    const tx = (Math.random() - 0.5) * 333 + "px";
-    const ty = (Math.random() - 0.5) * 222 + "px";
+    const tx = (Math.random() - 0.5) * 120 + "px";
+    const ty = (Math.random() - 0.5) * 80 + "px";
     const r = (Math.random() - 0.5) * 444 + "deg";
 
     cardInner.style.setProperty("--tx", tx);
