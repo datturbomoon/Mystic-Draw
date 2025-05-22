@@ -171,7 +171,7 @@ body {
 }
 
 .card-back {
-  background: url('Cards/CardBacks.jpg') center/cover;
+  background: url('cardback.jpg') center/cover;
 }
 
 /* ? 768px MAX-WIDTH STYLE */
