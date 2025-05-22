@@ -171,7 +171,7 @@ body {
 }
 
 .card-back {
-  background: url('cardback.jpg') center/cover;
+  background: url('Cards/CardBacks.jpg') center/cover;
 }
 
 /* ? 768px MAX-WIDTH STYLE */
@@ -220,7 +220,7 @@ body {
     z-index: 0;
   }
   100% {
-    transform: translate(var(--tx), var(--ty)) rotate(var(--r)) scale(0.7);
+    transform: translate(var(--tx), var(--ty)) scale(0.7);
     opacity: 0.3;
     filter: blur(12px);
     z-index: 0;
