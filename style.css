@@ -229,7 +229,7 @@ body {
 
 @keyframes regroup {
   0% {
-    transform: translate(var(--ty), var(--tx)) rotate(var(--r)) scale(0.7);
+    transform: translate(var(--ty), var(--tx)) scale(0.7);
     opacity: 0.3;
     filter: blur(12px);
   }
