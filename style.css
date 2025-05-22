@@ -98,6 +98,10 @@ body {
   flex-wrap: wrap;
   padding: 1rem;
   justify-content: center;
+  max-width: 90vw;    /* Prevents horizontal overflow */
+  max-height: 60vh;   /* Prevents vertical overflow */
+  overflow: auto;     /* Adds scrollbars if needed */
+  margin: 0 auto;     /* Centers the deck */
 }
 
 .card::before {
