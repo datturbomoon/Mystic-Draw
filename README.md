@@ -6,4 +6,4 @@ Users can shuffle the deck, draw multiple cards, and view detailed card meanings
 The project is built with **HTML**, **CSS**, and **JavaScript**, and includes a full set of Major Arcana tarot card images.  
 Perfect for tarot enthusiasts and anyone interested in digital card experiences.
 
-[View live demo here.](https://datturbomoon.github.io/Mystic-Draw/)
+[View live demo here.](https://dianapadre.xyz/Mystic-Draw/)
