@@ -6,4 +6,14 @@ Users can shuffle the deck, draw multiple cards, and view detailed card meanings
 The project is built with **HTML**, **CSS**, and **JavaScript**, and includes a full set of Major Arcana tarot card images.  
 Perfect for tarot enthusiasts and anyone interested in digital card experiences.
 
-[View live demo here.](http://mystic-draw.dianapadre.xyz/)
+**⚠️ This project is currently a work in progress.**  
+Some features are still being developed and refined.
+
+[View live demo here](http://mystic-draw.dianapadre.xyz/)
+
+---
+
+## Credits
+
+The card designs used in this project are from [Rider Waite Smith Tarot Cards by LuciellaEs](https://luciellaes.itch.io/rider-waite-smith-tarot-cards-cc0), released under the **CC0 (public domain)** license.  
+Thank you to LuciellaEs for sharing this beautiful artwork!

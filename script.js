@@ -1,3 +1,11 @@
+/*
+ * Copyright (c) 2025 Diana Padre (aka datturbomoon)
+ *<https://github.com/datturbomoon>
+ *
+ * Licensed under the MIT License.
+ * See the LICENSE file for details.
+ */
+
 const deck = document.getElementById("deck");
 const shuffleBtn = document.getElementById("shuffleBtn");
 let flipCount = 0;
