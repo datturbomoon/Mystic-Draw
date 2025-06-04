@@ -5,8 +5,6 @@ Copyright (c) 2025 Diana Padre (aka datturbomoon)
 Licensed under the MIT License.
 See the LICENSE file for details. */
 
-/* style.css */
-
 * {
   margin: 0;
   padding: 0;
@@ -17,11 +15,10 @@ html,
 body {
   scroll-behavior: smooth;
   font-size: 16px;
-  /* Default font size */
   overflow-x: hidden;
 }
 
-/* ! padding left & right removed at 768px width below */
+/* ! padding left & right removed at 768px width & below */
 body {
   min-height: 100vh;
   background: #111;
@@ -32,7 +29,7 @@ body {
   padding: 20px;
 }
 
-/* ? BG PARTICLES */
+/* ? background PARTICLES */
 #particles-js {
   position: fixed;
   top: 0;
@@ -123,7 +120,6 @@ body {
 
 .card {
   width: 15vw;
-  /* 15% of viewport width */
   max-width: 120px;
   min-width: 90px;
   aspect-ratio: 3 / 5;
@@ -182,7 +178,6 @@ body {
 }
 
 /* ? 768px MAX-WIDTH STYLE */
-
 @media (max-width: 768px) {
   body {
     padding-left: 0;
@@ -194,7 +189,7 @@ body {
     padding-left: 3em;
     padding-right: 0;
     gap: 0;
-    /* No gap so they overlap */
+    /* No gap so cards overlap */
     position: relative;
   }
 
@@ -213,6 +208,7 @@ body {
   }
 
 }
+
 /* ? CARD SHUFFLING ANIMATION */
 @keyframes scatter {
   0% {
@@ -259,6 +255,7 @@ body {
   animation: regroup 0.8s forwards;
 }
 
+/* appears when you click a card */
 .modal {
   position: fixed;
   top: 0;
@@ -303,7 +300,7 @@ body {
   animation: none;
 }
 
-/* ? CARD FLIP ANIMATION */
+/* ? CARD FLIP ANIMATION when you click a card */
 @keyframes flipZoomIn {
   0% {
     transform: rotateY(90deg) scale(0.5);
@@ -336,6 +333,7 @@ body {
   text-align: left;
 }
 
+/* modal content wraps at screen width 600px and below */
 @media (max-width: 600px) {
   .modal-content {
     flex-direction: column;
@@ -473,7 +471,6 @@ footer a:active {
   top: 8px;
   right: 16px;
   z-index: 10;
-  /* background: rgba(255,255,255,0.7); */
   border-radius: 50%;
   padding: 4px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
