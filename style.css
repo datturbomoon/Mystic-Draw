@@ -18,7 +18,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ! padding left & right removed at 768px width & below */
+/* ! padding left & right removed at 768px screen width & below */
 body {
   min-height: 100vh;
   background: #111;
@@ -52,6 +52,7 @@ body {
 
 .container .title {
   margin-top: 1rem;
+  color: rgba(122, 76, 127);
 }
 
 .container .instructions {
