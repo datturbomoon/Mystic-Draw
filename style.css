@@ -48,7 +48,7 @@ body {
   background: linear-gradient(150deg, #403617, #0E0B26, #000000);
 }
 
-button {
+button, .close-button, {
   -webkit-tap-highlight-color: transparent;
   -webkit-user-select: none; /* Optional: disables text selection */
   user-select: none;
@@ -428,6 +428,7 @@ footer a {
   color: #ad8c5d;
   text-decoration: none;
   font-weight: bold;
+  -webkit-tap-highlight-color: transparent;
 }
 
 footer a:hover {
