@@ -3,11 +3,8 @@
 A visually engaging web app for drawing tarot cards, featuring a modern UI, animated particle backgrounds, and interactive sound effects.  
 Users can shuffle the deck, draw multiple cards, and view detailed card meanings and advice in a modal popup.
 
-The project is built with **HTML**, **CSS**, and **JavaScript**, and includes a full set of Major Arcana tarot card images.  
-Perfect for tarot enthusiasts and anyone interested in digital card experiences.
-
-**⚠️ This project is currently a work in progress.**  
-Some features are still being developed and refined.
+The project is built with **HTML**, **CSS**, and **JavaScript**, and includes a full tarot card image set.  
+Perfect for tarot enthusiasts and anyone drawn to mystical, interactive digital experiences.
 
 [View live demo here](https://mystic-draw.datturbomoon.space/)
 
