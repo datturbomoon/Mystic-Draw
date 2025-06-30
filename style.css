@@ -130,7 +130,7 @@ body {
   margin: 0.5rem;
   cursor: pointer;
   position: relative;
-  
+
   flex: 0 0 auto;
   margin-left: -88px;
   margin-bottom: -70px;
@@ -248,6 +248,19 @@ body {
   animation: regroup 0.4s forwards;
 }
 
+/* ? CARD FLIP ANIMATION when you click a card */
+@keyframes flipZoomIn {
+  0% {
+    transform: rotateY(90deg) scale(0.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotateY(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
 .modal {
   position: fixed;
   top: 0;
@@ -268,7 +281,6 @@ body {
 
 .modal-content {
   position: relative;
-  color: #d0d0d0;
   border: 1px solid #4036177a;
 
   backdrop-filter: blur(5px);
@@ -298,89 +310,24 @@ body {
   animation: none;
 }
 
-.modal-content #card-name {
-  font-family: var(--title-font);
-  font-weight: 30;
-  font-size: 2.5rem;
-  color: #e9b368;
-  letter-spacing: 0.1rem;
-}
-
-/* ? CARD FLIP ANIMATION when you click a card */
-@keyframes flipZoomIn {
-  0% {
-    transform: rotateY(90deg) scale(0.5);
-    opacity: 0;
-  }
-
-  100% {
-    transform: rotateY(0deg) scale(1);
-    opacity: 1;
-  }
-}
-
 .card-meaning {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  color: #d0d0d0;
   max-width: 350px;
   min-width: 200px;
   text-align: left;
   gap: 1rem;
 }
 
-.card-advice {
-  /* margin-top: 0.5rem; */
-  font-style: italic;
-  color: #e9b368;
-  text-align: left;
-}
-
-@media (max-width: 680px) {
-  .modal-content {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .card-meaning {
-    max-width: 100%;
-    min-width: 0;
-    align-items: center;
-    text-align: center;
-  }
-
-  .card-advice {
-    text-align: center;
-  }
-}
-
-@media (max-width: 420px) {
-  .button-group {
-    justify-content: space-between;
-  }
-
-  .button-group button {
-    font-size: 0.7rem;
-
-  }
-  .card-meaning {
-    font-size: 0.9rem;
-  }
-  .modal-content #card-name{
-    font-size: 2rem;
-  }
-  footer {
-    font-size: 0.8rem;
-  }
-}
-
 #card-name {
+  font-family: var(--title-font);
+  color: #e9b368;
+  font-weight: 300;
+  font-size: 2.5rem;
+  letter-spacing: 0.1rem;
   margin-bottom: 0.5rem;
-  font-size: 1.5rem;
-  font-weight: bold;
 }
 
 .meaning-upright,
@@ -399,6 +346,12 @@ body {
   color: #e9b368;
 }
 
+.card-advice {
+  font-style: italic;
+  color: #e9b368;
+  text-align: left;
+}
+
 /* ? MODAL CLOSE BUTTON */
 .close-button {
   position: absolute;
@@ -414,6 +367,7 @@ body {
 .close-button:hover {
   color: #888888;
 }
+
 .close-button:active {
   color: #6d6d6d;
 }
@@ -451,6 +405,7 @@ footer {
   position: static;
   width: 100%;
   color: #d0d0d0;
+  font-size: 0.95rem;
   text-align: center;
   margin: 1rem auto;
   margin-top: 3rem;
@@ -527,5 +482,48 @@ footer a:active {
 @media (min-width: 768px) {
   footer {
     margin-top: 5rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .modal-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-meaning {
+    max-width: 100%;
+    min-width: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card-advice {
+    text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .button-group {
+    justify-content: space-between;
+  }
+
+  .button-group button {
+    font-size: 0.7rem;
+
+  }
+
+  #card-name {
+    font-size: 2.2rem;
+  }
+
+  .meaning-upright,
+  .meaning-reversed,
+  .card-advice {
+    font-size: 1rem;
+  }
+  footer {
+    font-size: 0.75rem;
   }
 }
