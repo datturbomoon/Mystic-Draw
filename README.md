@@ -9,7 +9,7 @@ Perfect for tarot enthusiasts and anyone interested in digital card experiences.
 **⚠️ This project is currently a work in progress.**  
 Some features are still being developed and refined.
 
-[View live demo here](https://mystic-draw.datturbomoon.space/)
+[View live demo here](http://mystic-draw.dianapadre.xyz/)
 
 ---
 

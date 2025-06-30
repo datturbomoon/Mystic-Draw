@@ -1,5 +1,6 @@
 <!-- 
-Copyright (c) 2025 Diana Padre (aka datturbomoon)
+Copyright (c) 2025 datturbomoon
+GitHub:
 <https://github.com/datturbomoon>
 
 Licensed under the MIT License.
@@ -13,13 +14,19 @@ See the LICENSE file for details.
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!--   FAVICON -->
+  <!--   FAVICON -->
   <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
   <link rel="shortcut icon" href="favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
   <link rel="manifest" href="favicon/site.webmanifest" />
   <title>Mystic Draw</title>
+  <!-- Fonts -->
+  <link rel="preload" href="https://fonts.googleapis.com">
+  <link rel="preload" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Imperial+Script&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
@@ -31,22 +38,22 @@ See the LICENSE file for details.
   <!-- ? Wrapper for the main content of the page -->
   <div class="container">
     <h1 class="title">Mystic Draw</h1>
-    <p class="instructions">(You can draw multiple cards. Shuffling will clear your current selection.)</p>
+    <!-- <p class="instructions">Draw multiple cards. Shuffling will clear your current selection.</p> -->
     <div class="button-group">
       <button id="shuffleBtn">Shuffle Deck</button>
-      <button id="drawRandomBtn">Draw a Random Card</button>
+      <button id="drawRandomBtn">Random Card</button>
     </div>
 
-    <!-- ? Sound toggle icon in upper right corner -->
+    <!-- Sound toggle icon in upper right corner -->
     <div id="sound-toggle-icon" class="sound-toggle-icon" title="Toggle sound effects">
-      <img id="sound-icon-img" src="img/sound-on.png" alt="Sound On" >
+      <img id="sound-icon-img" src="img/sound-on.svg" loading="lazy" alt="Sound On">
     </div>
 
     <div class="deck" id="deck"></div>
     <div id="modal" class="modal hidden">
       <div class="modal-content">
         <span class="close-button">&times;</span>
-        <img id="modal-image" src="" alt="Tarot Card" />
+        <img id="modal-image" src="" loading="lazy" alt="Tarot Card" />
         <div id="card-meaning" class="card-meaning">
           <h2 id="card-name"></h2>
           <div id="meaning-upright" class="meaning-upright"></div>

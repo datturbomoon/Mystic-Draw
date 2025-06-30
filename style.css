@@ -1,5 +1,6 @@
 /* 
-Copyright (c) 2025 Diana Padre (aka datturbomoon)
+Copyright (c) 2025 datturbomoon
+GitHub:
 <https://github.com/datturbomoon>
 
 Licensed under the MIT License.
@@ -9,24 +10,31 @@ See the LICENSE file for details. */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --title-font: "Imperial Script", cursive;
+  --main-font: "DM Sans", sans-serif;
 }
 
 html,
 body {
   scroll-behavior: smooth;
-  font-size: 16px;
   overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
 }
 
 /* ! padding left & right removed at 768px screen width & below */
 body {
-  min-height: 100vh;
-  background: #111;
-  color: #fff;
-  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  background: #181B26;
+  color: #d0d0d0;
+  font-family: var(--main-font);
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 1rem;
 }
 
 /* ? background PARTICLES */
@@ -37,13 +45,12 @@ body {
   width: 100%;
   height: 100%;
   z-index: 0;
-  background-color: #1e1e2f;
+  background: linear-gradient(150deg, #403617, #0E0B26, #000000);
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
   width: 100%;
   text-align: center;
   position: relative;
@@ -51,13 +58,11 @@ body {
 }
 
 .container .title {
-  margin-top: 1rem;
-  color: #D3A7D9;
-}
-
-.container .instructions {
-  padding: 0 1rem;
-  color: #d0d0d0;
+  margin: 1.5rem;
+  font-family: var(--title-font);
+  font-weight: 300;
+  font-size: 2.5rem;
+  letter-spacing: 0.1rem;
 }
 
 /* ? THE BUTTONS */
@@ -65,77 +70,91 @@ body {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
+  padding: 0 2rem;
   flex-wrap: wrap;
 }
 
 .button-group button {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  background: #4d4d4d;
-  color: white;
-  border: 1px solid #5d5d5d;
-  border-radius: 6px;
+  padding: 0.5rem 0.7rem;
+  font-family: var(--main-font);
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  color: #d0d0d0;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.1s linear;
+  /* border: 1px outset #777777; */
+  border: 1px outset rgba(131, 131, 131, 0.3);
 }
 
 .button-group button:nth-of-type(2) {
-  background: #7a4c7f;
-  color: #ffffff;
-  border: 1px solid #9a6c9f;
-  transition: background 0.3s ease;
+  background: #ffcb2f1c;
 }
 
 .button-group button:hover {
-  background: #9a6c9f;
-  border: 1px solid #9a6c9f;
-  transition: background 0.3s ease;
+  filter: brightness(1.2);
 }
 
 .button-group button:active {
-  background: #7a4c7f;
-  border: 1px solid #9a6c9f;
-  transition: background 0.1s ease;
+  border: 1px inset rgba(131, 131, 131, 0.3);
 }
 
 /* ? THE DECK SPREAD */
 .deck {
+  min-height: 100vh;
+  position: relative;
+
   display: flex;
   flex-wrap: wrap;
-  padding: 1rem;
   justify-content: center;
-}
-
-.card::before {
-  content: '';
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3);
-  filter: blur(11px);
-  border-radius: 10%;
-  z-index: -1;
+  max-width: 1080px;
+  margin: 1.5rem auto;
+  gap: 1rem;
+  padding-left: 6rem;
+  padding-right: 0;
+  /* No gap so cards overlap */
+  position: relative;
 }
 
 .card {
   width: 15vw;
-  max-width: 120px;
-  min-width: 90px;
-  aspect-ratio: 3 / 5;
+  max-width: 130px;
+  min-width: 110px;
+  aspect-ratio: 3.5 / 5;
   /* Keeps card proportions */
   perspective: 1000px;
   margin: 0.5rem;
   cursor: pointer;
   position: relative;
+  
+  flex: 0 0 auto;
+  margin-left: -88px;
+  margin-bottom: -70px;
+  z-index: 1;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  background: #0000004d;
+  filter: blur(11px);
+  border-radius: 10%;
+  z-index: -1;
 }
 
 .card:hover {
   filter: brightness(1.25);
   transform: scale(1.05);
-  transition: filter 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .card-inner {
@@ -146,7 +165,6 @@ body {
   position: relative;
 }
 
-/* ? .card-inner .flipped animation */
 .card.flipped .card-inner {
   transform: rotateY(180deg);
 }
@@ -168,6 +186,7 @@ body {
   backface-visibility: hidden;
   transform: rotateY(180deg);
   /* flipped default (without reversal) */
+  border: 1px solid #070707;
 }
 
 .card-front.reversed {
@@ -176,39 +195,7 @@ body {
 }
 
 .card-back {
-  background: url('Cards/CardBacks.jpg') center/cover;
-}
-
-/* ? 768px MAX-WIDTH STYLE */
-@media (max-width: 768px) {
-  body {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .deck {
-    display: flex;
-    padding-left: 3em;
-    padding-right: 0;
-    gap: 0;
-    /* No gap so cards overlap */
-    position: relative;
-  }
-
-  .card {
-    flex: 0 0 auto;
-    margin-left: -40px;
-    /* Overlap cards */
-    z-index: 1;
-    transition: transform 0.2s, z-index 0.2s;
-    cursor: pointer;
-  }
-
-  .card:hover {
-    transform: translateY(-10px);
-    z-index: 10;
-  }
-
+  background: url('Cards/CardBack.webp') center/cover;
 }
 
 /* ? CARD SHUFFLING ANIMATION */
@@ -219,11 +206,13 @@ body {
     filter: blur(0px);
     z-index: 1;
   }
+
   60% {
     opacity: 0.7;
     filter: blur(6px);
     z-index: 0;
   }
+
   100% {
     transform: translate(var(--tx), var(--ty)) scale(0.7);
     opacity: 0.3;
@@ -238,10 +227,12 @@ body {
     opacity: 0.3;
     filter: blur(12px);
   }
+
   60% {
     opacity: 0.7;
     filter: blur(6px);
   }
+
   100% {
     transform: translate(0, 0) rotate(0deg) scale(1);
     opacity: 1;
@@ -250,11 +241,11 @@ body {
 }
 
 .scatter-animation {
-  animation: scatter 0.8s forwards;
+  animation: scatter 0.4s forwards;
 }
 
 .regroup-animation {
-  animation: regroup 0.8s forwards;
+  animation: regroup 0.4s forwards;
 }
 
 .modal {
@@ -263,11 +254,10 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: #000000cc;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   z-index: 999;
   transition: all 0.3s ease;
 }
@@ -278,19 +268,23 @@ body {
 
 .modal-content {
   position: relative;
-  background-color: rgba(122, 76, 127, 0.8); /* Slightly see-through purple */
-/*   border: 1px solid rgba(122, 76, 127); */
-  border: 1px solid #9a6c9f;
-  padding: 20px;
+  color: #d0d0d0;
+  border: 1px solid #4036177a;
+
+  backdrop-filter: blur(5px);
+  background: linear-gradient(150deg, #403617b3, #0e0b26b3, #403617b3);
+  -webkit-backdrop-filter: blur(10px);
+
+  padding: 1.1rem;
   border-radius: 12px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 16px #000000b3;
   max-width: 90vw;
   max-height: 90vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: 2rem;
+  gap: 1.5rem;
   animation: flipZoomIn 0.6s ease forwards;
   transform-style: preserve-3d;
 }
@@ -302,6 +296,14 @@ body {
   display: block;
   /* Remove animation from image, keep for backward compatibility */
   animation: none;
+}
+
+.modal-content #card-name {
+  font-family: var(--title-font);
+  font-weight: 30;
+  font-size: 2.5rem;
+  color: #e9b368;
+  letter-spacing: 0.1rem;
 }
 
 /* ? CARD FLIP ANIMATION when you click a card */
@@ -322,7 +324,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  color: #fff;
+  color: #d0d0d0;
   max-width: 350px;
   min-width: 200px;
   text-align: left;
@@ -330,29 +332,39 @@ body {
 }
 
 .card-advice {
-  margin-top: 0.5rem;
-  font-size: 1.05rem;
-  color: #ffe066;
+  /* margin-top: 0.5rem; */
   font-style: italic;
+  color: #e9b368;
   text-align: left;
 }
 
-/* modal content wraps at screen width 600px and below */
-@media (max-width: 600px) {
+@media (max-width: 680px) {
   .modal-content {
     flex-direction: column;
-    gap: 1rem;
     align-items: center;
     justify-content: center;
   }
+
   .card-meaning {
     max-width: 100%;
     min-width: 0;
     align-items: center;
     text-align: center;
   }
+
   .card-advice {
     text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .button-group {
+    justify-content: space-between;
+  }
+
+  .button-group button {
+    font-size: 0.7rem;
+
   }
 }
 
@@ -362,60 +374,57 @@ body {
   font-weight: bold;
 }
 
-.meaning-upright, .meaning-reversed {
+.meaning-upright,
+.meaning-reversed {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }
 
 .meaning-upright::before {
   content: "Upright: ";
-  font-weight: bold;
-  color: #ffe066;
+  color: #e9b368;
 }
 
 .meaning-reversed::before {
   content: "Reversed: ";
-  font-weight: bold;
-  color: #ffe066;
+  color: #e9b368;
 }
 
 /* ? MODAL CLOSE BUTTON */
 .close-button {
   position: absolute;
-  top: 3px;
-  right: 8px;
+  top: 0;
+  right: 10px;
   font-size: 28px;
-  color: white;
+  color: #aaaaaa;
   cursor: pointer;
   z-index: 999;
+  transition: all 0.1s linear;
 }
 
 .close-button:hover {
-  color: #d0d0d0;
-  transition: color 0.3s ease;
+  color: #888888;
 }
-
 .close-button:active {
-  color: #b0b0b0;
-  transition: color 0.1s ease;
+  color: #6d6d6d;
 }
 
 /* ? CARD NUMBER */
 .card-number {
   position: absolute;
-  bottom: 6px;
+  top: 6px;
   left: 6px;
-  font-size: 14px;
+  font-size: 0.8rem;
   font-weight: 600;
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  background: #000000bf;
+  backdrop-filter: blur(2px);
   padding: 2px;
-  border-radius: 4px;
+  border-radius: 6px;
+  box-shadow: none;
   min-width: 20px;
   text-align: center;
-  line-height: 1.2;
   pointer-events: none;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
   z-index: 2;
   transform: rotate(0deg);
 }
@@ -424,71 +433,91 @@ body {
   transform: rotate(-180deg);
   left: auto;
   right: 6px;
-  top: 6px;
-  bottom: auto;
+  bottom: 6px;
+  top: auto;
 }
 
 /* ? FOOTER */
 footer {
   position: static;
   width: 100%;
-  background: none;
   color: #d0d0d0;
-  font-size: smaller;
+  font-size:  0.95rem;
   text-align: center;
-  margin-top: 1.5rem;
+  margin: 1rem auto;
+  margin-top: 3rem;
   z-index: 1;
   pointer-events: auto;
   display: none;
 }
 
-/* ? When the <body> element does not have the class modal-open, the <footer> will be displayed (display: block;). */
 body:not(.modal-open) footer {
   display: block;
 }
 
 footer a {
-  color: #9a6c9f;
+  color: #ad8c5d;
   text-decoration: none;
   font-weight: bold;
-  cursor: pointer;
 }
 
 footer a:hover {
   text-decoration: underline;
-  transition: text-decoration 0.3s ease;
 }
 
 footer a:active {
-  color: #7a4c7f;
-  transition: text-decoration 0.1s ease;
-}
-
-.instructions {
-  font-style: italic;
-  font-size: 0.95rem;
-  margin-bottom: 0.5rem;
+  filter: brightness(0.8);
 }
 
 .sound-toggle-icon {
   position: absolute;
-  top: 8px;
-  right: 16px;
+  top: 0px;
+  right: 12px;
   z-index: 10;
+  backdrop-filter: blur(2px);
+  background: #ffffff1a;
   border-radius: 50%;
-  padding: 4px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: background 0.2s;
+  padding: 5px;
+  box-shadow: 0 2px 8px #00000014;
+  border: 1px outset #a1a1a133;
+  transition: all 0.1s linear;
 }
 
 .sound-toggle-icon:hover {
-  filter: brightness(1);
+  filter: brightness(1.2);
+}
+
+.sound-toggle-icon:active {
+  border: 1px inset #a1a1a133;
 }
 
 .sound-toggle-icon img {
   display: block;
-  width: 26px;
-  height: 26px;
-  filter: brightness(0.8);
+  width: 24px;
+  height: 24px;
+  filter: brightness(0.85);
   cursor: pointer;
+  transition: all 0.1s linear;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .deck {
+    margin-bottom: 3rem;
+  }
+
+  /* .card:hover {
+    transform: translateY(-10px);
+    z-index: 10;
+  } */
+}
+
+@media (min-width: 768px) {
+  footer {
+    margin-top: 5rem;
+  }
 }
