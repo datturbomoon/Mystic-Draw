@@ -270,6 +270,7 @@ body {
   position: relative;
   color: #d0d0d0;
   border: 1px solid #4036177a;
+  font-size: 0.8rem;
 
   backdrop-filter: blur(5px);
   background: linear-gradient(150deg, #403617b3, #0e0b26b3, #403617b3);
@@ -442,7 +443,7 @@ footer {
   position: static;
   width: 100%;
   color: #d0d0d0;
-  font-size:  0.95rem;
+  font-size:  0.8rem;
   text-align: center;
   margin: 1rem auto;
   margin-top: 3rem;
