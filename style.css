@@ -141,6 +141,10 @@ button {
   margin-left: -88px;
   margin-bottom: -70px;
   z-index: 1;
+
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .card::before {
