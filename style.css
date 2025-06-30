@@ -48,7 +48,7 @@ body {
   background: linear-gradient(150deg, #403617, #0E0B26, #000000);
 }
 
-button, .close-button, {
+button {
   -webkit-tap-highlight-color: transparent;
   -webkit-user-select: none; /* Optional: disables text selection */
   user-select: none;
@@ -368,6 +368,9 @@ button, .close-button, {
   cursor: pointer;
   z-index: 999;
   transition: all 0.1s linear;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .close-button:hover {
@@ -428,7 +431,6 @@ footer a {
   color: #ad8c5d;
   text-decoration: none;
   font-weight: bold;
-  -webkit-tap-highlight-color: transparent;
 }
 
 footer a:hover {
@@ -451,6 +453,9 @@ footer a:active {
   box-shadow: 0 2px 8px #00000014;
   border: 1px outset #a1a1a133;
   transition: all 0.1s linear;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .sound-toggle-icon:hover {
