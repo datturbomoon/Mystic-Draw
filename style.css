@@ -81,12 +81,12 @@ button {
 }
 
 .button-group button {
-  padding: 0.5rem 0.7rem;
+  padding: 0.7rem 0.8rem;
   font-family: var(--main-font);
   letter-spacing: 2px;
   font-size: 0.8rem;
   text-transform: uppercase;
-  background: rgba(255, 255, 255, 0.1);
+  background: #ffffff1a;
   backdrop-filter: blur(4px);
   color: #d0d0d0;
   border: none;
@@ -94,7 +94,7 @@ button {
   cursor: pointer;
   transition: all 0.1s linear;
   /* border: 1px outset #777777; */
-  border: 1px outset rgba(131, 131, 131, 0.3);
+  border: 1px outset #8383834d;
 }
 
 .button-group button:nth-of-type(2) {
@@ -106,7 +106,8 @@ button {
 }
 
 .button-group button:active {
-  border: 1px inset rgba(131, 131, 131, 0.3);
+  border: 1px inset #8383834d;
+  filter: brightness(1);
 }
 
 /* ? THE DECK SPREAD */
@@ -277,7 +278,7 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #000000cc;
+  background-color: #0f0f0fe6;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -293,7 +294,7 @@ button {
   position: relative;
   border: 1px solid #4036177a;
 
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(20px);
   background: linear-gradient(150deg, #403617b3, #0e0b26b3, #403617b3);
   -webkit-backdrop-filter: blur(10px);
 
@@ -468,6 +469,7 @@ footer a:active {
 
 .sound-toggle-icon:active {
   border: 1px inset #a1a1a133;
+  filter: brightness(1);
 }
 
 .sound-toggle-icon img {
@@ -542,4 +544,32 @@ footer a:active {
   footer {
     font-size: 0.75rem;
   }
+}
+
+/* Target the scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+/* Track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+    background: #181B26;
+    border-radius: 10px;
+}
+
+/* Handle (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+    background: #40361780;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #403617b3;
+}
+
+/* where both scrollbars meet */
+::-webkit-scrollbar-corner {
+    background: #181B26;
 }
