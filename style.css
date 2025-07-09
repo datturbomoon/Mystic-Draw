@@ -93,8 +93,8 @@ button {
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.1s linear;
-  /* border: 1px outset #777777; */
   border: 1px outset #8383834d;
+  transition: background 0.3s linear;
 }
 
 .button-group button:nth-of-type(2) {
@@ -102,12 +102,12 @@ button {
 }
 
 .button-group button:hover {
-  filter: brightness(1.2);
+  background: #e9b36869;
 }
 
 .button-group button:active {
   border: 1px inset #8383834d;
-  filter: brightness(1);
+  filter: brightness(0.9);
 }
 
 /* ? THE DECK SPREAD */
