@@ -8,9 +8,11 @@ Perfect for tarot enthusiasts and anyone drawn to mystical, interactive digital 
 
 [View live demo here](https://mystic-draw.datturbomoon.space/)
 
+![snapshot](img/snapshot.png)
 ---
 
 ## Credits
 
 The card designs used in this project are from [Rider Waite Smith Tarot Cards by LuciellaEs](https://luciellaes.itch.io/rider-waite-smith-tarot-cards-cc0), released under the **CC0 (public domain)** license.  
 Thank you to LuciellaEs for sharing this beautiful artwork!
+
