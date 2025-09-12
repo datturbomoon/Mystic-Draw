@@ -350,11 +350,13 @@ button {
 .meaning-upright::before {
   content: "Upright: ";
   color: #e9b368;
+  user-select: text;
 }
 
 .meaning-reversed::before {
   content: "Reversed: ";
   color: #e9b368;
+  user-select: text;
 }
 
 .card-advice {
